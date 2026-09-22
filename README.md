@@ -31,7 +31,7 @@ Use one service, one replica, and one volume mounted at `/data`.
 | Variable | Description |
 | --- | --- |
 | `HARNESS_ACCESS_USERNAME` | User-chosen gateway username. Use 3-64 characters: letters, numbers, `.`, `_`, or `-`. |
-| `HARNESS_ACCESS_PASSWORD` | User-chosen gateway password. Minimum 12 characters; 16 or more is recommended. Store as a secret. |
+| `HARNESS_ACCESS_PASSWORD` | User-chosen non-empty gateway password. Railway cannot enforce length in the template form, so 12+ characters are strongly recommended and 16+ are preferred. Shorter values start with a warning instead of failing deployment. Store as a secret. |
 | `DSH_HOME` | Set to `/data/.dsh`. |
 | `WORKSPACE_DIR` | Set to `/data/workspace`. |
 | `DSH_TELEMETRY_DISABLED` | Set to `true` for the template privacy default. |

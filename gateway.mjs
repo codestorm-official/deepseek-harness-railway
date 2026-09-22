@@ -200,7 +200,9 @@ function requiredPassword(name) {
   const value = process.env[name]
   if (!value) throw new Error(`${name} is required`)
   const length = [...value].length
-  if (length < 12) throw new Error(`${name} must be at least 12 characters; 16 or more is recommended`)
+  if (length < 12) {
+    console.warn(`${name} is shorter than the recommended 12 characters; use 16 or more for a public deployment`)
+  }
   if (length > 256) throw new Error(`${name} must be no more than 256 characters`)
   return value
 }
