@@ -1,0 +1,6 @@
+# Railway-specific invocation overlay. This uses the official workspace-controller
+# configuration seam so first-use browser workspaces are created on the mounted
+# persistent volume instead of the container user's ephemeral home directory.
+- id: workspace-controller
+  config:
+    documentsDirectory: !!js process.env.WORKSPACE_DIR ?? '/data/workspace'
