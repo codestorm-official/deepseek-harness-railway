@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Minimal Railway gateway for the official DeepSeek Harness npm package",
+  "description": "RAKIT independent single-service Railway deployment wrapper for DeepSeek Harness",
   "engines": {
     "node": ">=24.0.0"
   },
   "scripts": {
     "patch:upstream": "node patch-upstream.mjs",
-    "start": "node gateway.mjs"
+    "start": "node gateway.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:upstream": "node --test test/upstream.integration.mjs"
   },
   "dependencies": {
-    "@deepseek-ai/dsh": "0.1.7-alpha.1",
-    "http-proxy": "1.18.1"
+    "@deepseek-ai/dsh": "0.1.7-alpha.1"
   }
 }
